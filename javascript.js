@@ -18,4 +18,4 @@ function makeGrid(row,col){
 
 window.onload = function() {
     makeGrid(16,16);
-}
+} 
