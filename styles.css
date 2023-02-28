@@ -1,3 +1,7 @@
+div{
+    position:  relative;
+}
+
 :root{
     --grid-row: 1;
     --grid-col: 1;
@@ -26,13 +30,84 @@ body{
 .control{
     grid-row: 2/3;
     display: grid;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 10% 40% 10% 10% 10% 10%;
+    row-gap: 10px;
 }
 
-.sketchArea{
+.reset {
+    order: 1;
+}
+
+.rainbow{
+    order: 3;
+}
+
+.black {
+    order: 4;
+}
+
+.erase {
+    order: 5;
+}
+.color_picker {
+    order: 2;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #626262;
+    transition: all 0.6s ease-in;
+    top: 25%;
+    left: 25%;
+}
+.palette{
+    position: relative;
+    display: inline-block;
+    width: 170px;
+    height: 170px;
+    border: 0px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.color_picker:hover{
+    transform: scale(1.1,1.1);
+}
+
+#button {
+    color: rgb(255, 255, 255); 
+    font-size: 25px; 
+    justify-content: center;
+    align-items: center;
+    line-height: 16px; 
+    padding: 6px; 
+    border-radius: 10px; 
+    font-family: 'Shantell Sans', cursive;
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: radial-gradient(at center center, rgb(0, 0, 0) 0%, rgb(2, 8, 12) 79%, rgb(8, 32, 47) 100%); 
+    box-shadow: rgba(0, 0, 0, 0.66) 5px 5px 39px 8px; 
+    border: 2px solid rgb(163, 175, 175); 
+    display: flex;
+    top: 15%;
+    left: 15%;
+    position: relative;
+    max-width: 200px;
+    max-height: 50px;
+    cursor: grab;
+}
+    #button:hover {
+    background: #363734; }
+    #button:active {
+    background: #292A28; }
+
+#sketchArea{
     grid-row: 2/3;
     display: grid;
-    grid-template-rows: 10% 80% 10%;
+    grid-template-rows: 20% 70% 10%;
     place-items: left;
 }
 
@@ -47,6 +122,7 @@ body{
     box-shadow: 6px 0px 15px 7px rgba(27,27,27,0.65);
     position: relative;
     left: 100px;
+    order: 2;
 }
 
 h1{
@@ -57,13 +133,50 @@ h1{
     font-family: 'Itim', cursive;
     color: #700F8E;
     border: 4px double rgba(32,40,164,0.91);
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
     width: fit-content;
     margin-top: 10px;
+    font-size: 4vw;
 }
 
-.active {
+#active {
     background-color: #700F8E;
+}
+
+input[type=range]{
+    width: 50%;
+    height: 20px;
+    order: 1;
+    position: relative;
+    top: 25px;
+    left: 20px;
+    transform: scale(1 , 1.5);
+    appearance: none;
+    background: #CDCDCD;
+    border-radius: 10px;
+    transition: all 0.5s;
+    opacity: 0.7;
+    border: 2px solid white;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #292A28;
+    cursor: pointer;
+}
+input[type=range]:hover{
+    opacity: 1;
+}
+
+.slider {
+    margin-top: 10px;
+    max-width: 450px;
+}
+
+#sliderValue {
+    font-size: 16px;
+    text-align: left;
+    padding-left: 30px;
 }
