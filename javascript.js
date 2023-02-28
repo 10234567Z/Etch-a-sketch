@@ -28,6 +28,10 @@ function gridSize(){
     }
 }
 function resetGrid(){
+
+    /** Removed grid then made a new grid with same ID for getting the same
+     *  styles and methods assigned for it.
+     */
     hoveringArea.remove();
     hoveringArea = document.createElement('div');
     hoveringArea.id = 'sketchPad';
