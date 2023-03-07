@@ -5,6 +5,7 @@ div{
 :root{
     --grid-row: 1;
     --grid-col: 1;
+    --newColor: #700F8E;
 }
 
 *{
@@ -30,23 +31,23 @@ body{
 .control{
     grid-row: 2/3;
     display: grid;
-    grid-template-rows: 10% 40% 10% 10% 10% 10%;
+    grid-template-rows: 20% 30% 20% 20% 10%;
     row-gap: 10px;
 }
 
-.reset {
+#reset {
     order: 1;
 }
 
-.rainbow{
+#rainbow{
     order: 3;
 }
 
-.black {
+#black {
     order: 4;
 }
 
-.erase {
+#erase {
     order: 5;
 }
 .color_picker {
@@ -57,7 +58,6 @@ body{
     border-radius: 50%;
     border: 3px solid #626262;
     transition: all 0.6s ease-in;
-    top: 25%;
     left: 25%;
 }
 .palette{
@@ -74,7 +74,7 @@ body{
     transform: scale(1.1,1.1);
 }
 
-#button {
+.button {
     color: rgb(255, 255, 255); 
     font-size: 25px; 
     justify-content: center;
@@ -99,12 +99,12 @@ body{
     max-height: 50px;
     cursor: grab;
 }
-    #button:hover {
+    .button:hover {
     background: #363734; }
-    #button:active {
+    .button:active {
     background: #292A28; }
 
-#sketchArea{
+.sketchArea{
     grid-row: 2/3;
     display: grid;
     grid-template-rows: 20% 70% 10%;
@@ -135,11 +135,7 @@ h1{
     border: 4px double rgba(32,40,164,0.91);
     width: fit-content;
     margin-top: 10px;
-    font-size: 4vw;
-}
-
-#active {
-    background-color: #700F8E;
+    font-size: 40px;
 }
 
 input[type=range]{
@@ -175,8 +171,44 @@ input[type=range]:hover{
     max-width: 450px;
 }
 
-#sliderValue {
+.sliderValue {
     font-size: 16px;
     text-align: left;
     padding-left: 30px;
+}
+
+@media screen and (max-width: 770px){
+    .slider {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        width: 50%;
+        left: 100px;
+        height: 75%;
+        margin-bottom: 10px;
+    }
+    input[type=range]{
+        height: 15px;
+    }
+    .sliderValue {
+        position: relative;
+        top: 30px;
+    }
+}
+
+@media screen and (max-width: 510px){
+    h1 {
+        font-size: 30px;
+        right: 25px;
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .button{
+        max-width: 150px;
+    }
+    .color_picker{
+        width: 100px;
+        height: 100px;
+    }
 }
